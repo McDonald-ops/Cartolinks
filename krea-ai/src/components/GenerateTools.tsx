@@ -2,14 +2,14 @@
 
 import { 
   Image as ImageIcon, 
-  Play, 
+  Video, 
   Zap, 
   ArrowUpRight, 
   Type, 
   Mic, 
   User, 
   Brain,
-  ExternalLink
+  ChevronDown
 } from "lucide-react";
 
 const toolsData = [
@@ -19,23 +19,26 @@ const toolsData = [
     title: "Image",
     description: "Generate images with custom styles in Flux and Ideogram",
     isNew: true,
-    color: "bg-blue-50 text-blue-600"
+    color: "text-white",
+    bgColor: "#4D6276"
   },
   {
     id: 2,
-    icon: Play,
+    icon: Video,
     title: "Video",
     description: "Generate videos with Haiuo, Pika, Runway, Luma, and more",
     isNew: false,
-    color: "bg-purple-50 text-purple-600"
+    color: "text-white",
+    bgColor: "#F2AD19"
   },
   {
     id: 3,
     icon: Zap,
     title: "Realtime",
     description: "Realtime AI rendering on a canvas. Instant feedback loops",
-    isNew: true,
-    color: "bg-yellow-50 text-yellow-600"
+    isNew: false,
+    color: "text-white",
+    bgColor: "#2CA6EE"
   },
   {
     id: 4,
@@ -43,7 +46,8 @@ const toolsData = [
     title: "Enhancer",
     description: "Upscale and enhance images and videos up to 22K",
     isNew: true,
-    color: "bg-green-50 text-green-600"
+    color: "text-white",
+    bgColor: "#131313"
   },
   {
     id: 5,
@@ -51,7 +55,8 @@ const toolsData = [
     title: "Edit",
     description: "Add objects, change style, or expand photos and generations",
     isNew: true,
-    color: "bg-pink-50 text-pink-600"
+    color: "text-white",
+    bgColor: "#4D2877"
   },
   {
     id: 6,
@@ -59,7 +64,8 @@ const toolsData = [
     title: "Video Lipsync",
     description: "Lip sync any video to any audio",
     isNew: true,
-    color: "bg-red-50 text-red-600"
+    color: "text-white",
+    bgColor: "#3A635F"
   },
   {
     id: 7,
@@ -67,7 +73,8 @@ const toolsData = [
     title: "Motion Transfer",
     description: "Transfer motion to images and animate characters",
     isNew: true,
-    color: "bg-indigo-50 text-indigo-600"
+    color: "text-white",
+    bgColor: "#1C1E1F"
   },
   {
     id: 8,
@@ -75,7 +82,8 @@ const toolsData = [
     title: "Train",
     description: "Teach Krea to replicate your style, products, or characters",
     isNew: false,
-    color: "bg-orange-50 text-orange-600"
+    color: "text-gray-900",
+    bgColor: "#EEEDDC"
   }
 ];
 
@@ -86,10 +94,10 @@ export default function GenerateTools() {
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Generate</h2>
         <a 
           href="#" 
-          className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center space-x-1 text-sm sm:text-base"
+          className="text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center space-x-1 text-sm sm:text-base"
         >
+          <ChevronDown className="w-4 h-4" />
           <span>Show all</span>
-          <ExternalLink className="w-4 h-4" />
         </a>
       </div>
 
@@ -99,30 +107,36 @@ export default function GenerateTools() {
           return (
             <div
               key={tool.id}
-              className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all duration-200 hover:border-gray-300 group cursor-pointer"
+              className="bg-white rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group cursor-pointer"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className={`p-3 rounded-lg ${tool.color}`}>
-                  <IconComponent className="w-6 h-6" />
+              <div className="flex items-center space-x-4">
+                <div 
+                  className={`p-3 rounded-lg flex-shrink-0`}
+                  style={{ backgroundColor: tool.bgColor }}
+                >
+                  <IconComponent className={`w-15 h-15 ${tool.color}`} />
                 </div>
-                {tool.isNew && (
-                  <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">
-                    New
-                  </span>
-                )}
+
+                <div className="flex-1">
+                  <div className="flex items-center space-x-2 mb-1">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
+                      {tool.title}
+                    </h3>
+                    {tool.isNew && (
+                      <span className="text-xs font-semibold text-white bg-blue-600 px-2 py-1 rounded-full">
+                        New
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {tool.description}
+                  </p>
+                </div>
+
+                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors group-hover:bg-gray-200 flex-shrink-0">
+                  Open
+                </button>
               </div>
-
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
-                {tool.title}
-              </h3>
-
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                {tool.description}
-              </p>
-
-              <button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors group-hover:bg-gray-200">
-                Open
-              </button>
             </div>
           );
         })}
