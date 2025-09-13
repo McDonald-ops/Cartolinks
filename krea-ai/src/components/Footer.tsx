@@ -4,22 +4,22 @@ export default function Footer() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left side - Krea AI Logo */}
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">K</span>
+          <div className="flex items-center space-x-6 mb-8 md:mb-0">
+            <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center">
+              <span className="text-black font-black text-5xl">K</span>
             </div>
-            <span className="text-xl font-bold">Krea AI</span>
+            <span className="text-5xl font-bold">Krea AI</span>
           </div>
 
           {/* Right side - Mobbin branding and links */}
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-            <div className="flex items-center space-x-2 text-gray-400">
-              <span className="text-sm">curated by</span>
-              <div className="flex items-center space-x-1">
-                <div className="w-4 h-4 bg-white rounded-sm flex items-center justify-center">
-                  <span className="text-black font-bold text-xs">M</span>
+          <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
+            <div className="flex items-center space-x-6 text-gray-400">
+              <span className="text-3xl font-semibold">curated by</span>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                  <span className="text-black font-black text-2xl">M</span>
                 </div>
-                <span className="font-semibold">Mobbin</span>
+                <span className="font-black text-5xl">Mobbin</span>
               </div>
             </div>
             
