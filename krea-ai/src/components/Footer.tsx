@@ -23,20 +23,6 @@ export default function Footer() {
               </div>
             </div>
             
-            <div className="flex items-center space-x-4 text-sm">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Legal
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Pricing
-              </a>
-            </div>
           </div>
         </div>
       </div>
