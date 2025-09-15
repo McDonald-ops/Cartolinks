@@ -1,25 +1,25 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-white py-6">
+      <div className="px-3 sm:px-4 lg:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left side - Krea AI Logo */}
-          <div className="flex items-center space-x-6 mb-8 md:mb-0">
-            <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center">
-              <span className="text-black font-black text-5xl">K</span>
+          <div className="flex items-center space-x-4 mb-6 md:mb-0">
+            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+              <span className="text-black font-black text-2xl">K</span>
             </div>
-            <span className="text-5xl font-bold">Krea AI</span>
+            <span className="text-2xl font-bold">Krea AI</span>
           </div>
 
           {/* Right side - Mobbin branding and links */}
-          <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
-            <div className="flex items-center space-x-6 text-gray-400">
-              <span className="text-3xl font-semibold">curated by</span>
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                  <span className="text-black font-black text-2xl">M</span>
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <div className="flex items-center space-x-4 text-gray-400">
+              <span className="text-lg font-semibold">curated by</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                  <span className="text-black font-black text-lg">M</span>
                 </div>
-                <span className="font-black text-5xl">Mobbin</span>
+                <span className="font-black text-2xl">Mobbin</span>
               </div>
             </div>
             
