@@ -91,7 +91,7 @@ export default function GenerateTools() {
   return (
     <section className="py-8 sm:py-12">
       <div className="flex items-center justify-between mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Generate</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Generate</h2>
         <a 
           href="#" 
           className="text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center space-x-1 text-sm sm:text-base"
