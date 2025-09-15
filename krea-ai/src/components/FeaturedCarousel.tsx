@@ -6,6 +6,17 @@ import useEmblaCarousel from "embla-carousel-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
+/**
+ * Carousel data containing information for each featured slide.
+ * Each slide includes:
+ * - id: Unique identifier
+ * - label: Category/tag for the feature
+ * - title: Main feature name
+ * - description: Detailed description with optional line breaks
+ * - buttonText: Call-to-action button text
+ * - image: Placeholder image path
+ * - isNew: Boolean flag for new feature badges
+ */
 const carouselData = [
   {
     id: 1,
@@ -90,31 +101,54 @@ const carouselData = [
   }
 ];
 
+/**
+ * FeaturedCarousel component displays a responsive carousel showcasing AI generation tools.
+ * Features:
+ * - Responsive design: 1 slide on mobile, 2 slides on desktop
+ * - Special layouts for ID 1 (WAN 2.2) and ID 2 (FLUX.1) with custom backgrounds
+ * - Navigation arrows and pagination dots
+ * - Smooth scrolling and loop functionality
+ * - Dark mode support for all slides
+ */
 export default function FeaturedCarousel() {
+  // Embla carousel configuration with responsive breakpoints
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true,
+    loop: true, // Enable infinite loop
     breakpoints: {
+      // On desktop (1024px+), show 2 slides at once
       '(min-width: 1024px)': { slidesToScroll: 2, containScroll: 'trimSnaps' }
     },
-    startIndex: 0,
-    slidesToScroll: 1,
-    containScroll: 'trimSnaps'
+    startIndex: 0, // Start at first slide
+    slidesToScroll: 1, // Default: scroll 1 slide at a time
+    containScroll: 'trimSnaps' // Trim empty space at edges
   });
+  
+  // Track currently selected slide index for pagination dots
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  /**
+   * Navigate to the previous slide
+   */
   const scrollPrev = () => {
     if (emblaApi) emblaApi.scrollPrev();
   };
 
+  /**
+   * Navigate to the next slide
+   */
   const scrollNext = () => {
     if (emblaApi) emblaApi.scrollNext();
   };
 
+  /**
+   * Jump directly to a specific slide by index
+   * @param index - The slide index to navigate to
+   */
   const scrollTo = (index: number) => {
     if (emblaApi) emblaApi.scrollTo(index);
   };
 
-  // Update selected index when carousel moves
+  // Update selected index when carousel moves to keep pagination dots in sync
   React.useEffect(() => {
     if (!emblaApi) return;
 
@@ -139,7 +173,7 @@ export default function FeaturedCarousel() {
               <div key={slide.id} className="flex-[0_0_100%] lg:flex-[0_0_50%] min-w-0 pl-2 sm:pl-4">
                 <div className={`rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-[500px]`}>
                   {slide.id === 1 ? (
-                    // First card with full background image
+                    // Special layout for WAN 2.2 - Full background with three side-by-side images
                     <>
                       <div className="absolute inset-0 flex">
                         <div className="flex-1 relative">
@@ -203,7 +237,7 @@ export default function FeaturedCarousel() {
                       </div>
                     </>
                   ) : slide.id === 2 ? (
-                    // Card 2 with stacked images
+                    // Special layout for FLUX.1 - Stacked layered images with rotation effects
                     <>
                       <div className="absolute inset-0">
                         {/* Third image (back) - largest */}
@@ -272,7 +306,7 @@ export default function FeaturedCarousel() {
                       </div>
                     </>
                   ) : (
-                    // Default card for other slides
+                    // Default layout for slides 3-9 - Standard card with gradient background
                     <>
                       <div className="h-full relative flex items-center justify-center p-8 bg-gray-50">
                         {/* Background placeholder */}
@@ -319,7 +353,7 @@ export default function FeaturedCarousel() {
 
         {/* Pagination Dots and Navigation Arrows */}
         <div className="flex justify-between items-center mt-6">
-          {/* Pagination Dots - Centered */}
+          {/* Pagination Dots - Centered below carousel */}
           <div className="flex justify-center flex-1">
             <div className="flex space-x-2">
               {carouselData.map((_, index) => (
@@ -336,8 +370,9 @@ export default function FeaturedCarousel() {
             </div>
           </div>
           
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Right side */}
           <div className="flex space-x-2">
+            {/* Previous slide button */}
             <button
               onClick={scrollPrev}
               className="bg-white border border-gray-200 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
@@ -345,6 +380,7 @@ export default function FeaturedCarousel() {
               <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
             
+            {/* Next slide button */}
             <button
               onClick={scrollNext}
               className="bg-white border border-gray-200 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"

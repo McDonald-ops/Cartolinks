@@ -12,6 +12,17 @@ import {
   ChevronDown
 } from "lucide-react";
 
+/**
+ * Tools data configuration for the GenerateTools component.
+ * Each tool includes:
+ * - id: Unique identifier
+ * - icon: Lucide React icon component
+ * - title: Tool name
+ * - description: Brief description of the tool's functionality
+ * - isNew: Boolean flag for "New" badge display
+ * - color: Text color for the icon (usually white for contrast)
+ * - bgColor: Background color for the icon container
+ */
 const toolsData = [
   {
     id: 1,
@@ -87,9 +98,20 @@ const toolsData = [
   }
 ];
 
+/**
+ * GenerateTools component displays a grid of AI generation tools with interactive cards.
+ * Features:
+ * - Responsive grid layout (1 column on mobile, 2 on tablet, 4 on desktop)
+ * - Each tool card shows icon, title, description, and "New" badge if applicable
+ * - Hover effects and smooth transitions
+ * - "Open" button for each tool
+ * - "Show all" link to expand the view
+ * - Dark mode support for the heading
+ */
 export default function GenerateTools() {
   return (
     <section className="py-8 sm:py-12">
+      {/* Section header with title and "Show all" link */}
       <div className="flex items-center justify-between mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Generate</h2>
         <a 
@@ -101,6 +123,7 @@ export default function GenerateTools() {
         </a>
       </div>
 
+      {/* Responsive grid of tool cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {toolsData.map((tool) => {
           const IconComponent = tool.icon;
@@ -110,6 +133,7 @@ export default function GenerateTools() {
               className="bg-white rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group cursor-pointer"
             >
               <div className="flex items-center space-x-4">
+                {/* Tool icon with custom background color */}
                 <div 
                   className={`p-3 rounded-lg flex-shrink-0`}
                   style={{ backgroundColor: tool.bgColor }}
@@ -117,11 +141,13 @@ export default function GenerateTools() {
                   <IconComponent className={`w-15 h-15 ${tool.color}`} />
                 </div>
 
+                {/* Tool information */}
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
                     <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
                       {tool.title}
                     </h3>
+                    {/* "New" badge for recently added tools */}
                     {tool.isNew && (
                       <span className="text-xs font-semibold text-white bg-blue-600 px-2 py-1 rounded-full">
                         New
@@ -133,6 +159,7 @@ export default function GenerateTools() {
                   </p>
                 </div>
 
+                {/* Action button */}
                 <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors group-hover:bg-gray-200 flex-shrink-0">
                   Open
                 </button>
