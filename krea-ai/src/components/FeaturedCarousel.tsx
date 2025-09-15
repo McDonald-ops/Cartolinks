@@ -102,7 +102,7 @@ const carouselData = [
 ];
 
 /**
- * FeaturedCarousel component displays a responsive carousel showcasing AI generation tools.
+ * FeaturedCarousel component displays a responsive carousel showcasing generation tools.
  * Features:
  * - Responsive design: 1 slide on mobile, 2 slides on desktop
  * - Special layouts for ID 1 (WAN 2.2) and ID 2 (FLUX.1) with custom backgrounds
@@ -165,7 +165,7 @@ export default function FeaturedCarousel() {
   }, [emblaApi]);
 
   return (
-    <section className="py-8 sm:py-12">
+    <section className="pt-16 pb-8 sm:pt-20 sm:pb-12">
       <div className="relative">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
