@@ -99,7 +99,7 @@ const toolsData = [
 ];
 
 /**
- * GenerateTools component displays a grid of AI generation tools with interactive cards.
+ * GenerateTools component displays a grid of generation tools with interactive cards.
  * Features:
  * - Responsive grid layout (1 column on mobile, 2 on tablet, 4 on desktop)
  * - Each tool card shows icon, title, description, and "New" badge if applicable
@@ -113,7 +113,7 @@ export default function GenerateTools() {
     <section className="py-8 sm:py-12">
       {/* Section header with title and "Show all" link */}
       <div className="flex items-center justify-between mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Generate</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Generate</h2>
         <a 
           href="#" 
           className="text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center space-x-1 text-sm sm:text-base"
@@ -130,37 +130,37 @@ export default function GenerateTools() {
           return (
             <div
               key={tool.id}
-              className="bg-white rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all duration-200 group cursor-pointer"
+              className="bg-white rounded-md p-2.5 sm:p-3 hover:shadow-lg transition-all duration-200 group cursor-pointer"
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2.5">
                 {/* Tool icon with custom background color */}
                 <div 
-                  className={`p-3 rounded-lg flex-shrink-0`}
+                  className={`p-1.5 rounded-sm flex-shrink-0`}
                   style={{ backgroundColor: tool.bgColor }}
                 >
-                  <IconComponent className={`w-15 h-15 ${tool.color}`} />
+                  <IconComponent className={`w-6 h-6 ${tool.color}`} />
                 </div>
 
                 {/* Tool information */}
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
+                  <div className="flex items-center space-x-1.5 mb-0.5">
+                    <h3 className="text-sm font-semibold text-gray-900 group-hover:text-gray-700 transition-colors whitespace-nowrap">
                       {tool.title}
                     </h3>
                     {/* "New" badge for recently added tools */}
                     {tool.isNew && (
-                      <span className="text-xs font-semibold text-white bg-blue-600 px-2 py-1 rounded-full">
+                      <span className="text-xs font-semibold text-white bg-blue-600 px-1 py-0.5 rounded-full">
                         New
                       </span>
                     )}
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {tool.description}
                   </p>
                 </div>
 
                 {/* Action button */}
-                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors group-hover:bg-gray-200 flex-shrink-0">
+                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-1 px-2.5 rounded-sm transition-colors group-hover:bg-gray-200 flex-shrink-0 text-xs">
                   Open
                 </button>
               </div>
