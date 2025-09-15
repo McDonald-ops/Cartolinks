@@ -31,21 +31,21 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white px-4 sm:px-6 lg:px-8">
+    <header className="bg-white dark:bg-black px-4 sm:px-6 lg:px-8 pt-4">
       <div className="flex items-center justify-between h-16">
         {/* Left side - Logo and User */}
         <div className="flex items-center space-x-4">
-          <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">K</span>
+          <div className="w-10 h-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+            <span className="text-white dark:text-black font-bold text-xl">K</span>
           </div>
           
           {/* Rainbow circle icon */}
-          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
-            <div className="w-4 h-4 rounded-full bg-white"></div>
+          <div className="w-7 h-7 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
+            <div className="w-5 h-5 rounded-full bg-white"></div>
           </div>
           
-          <div className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 cursor-pointer">
-            <span className="text-sm font-medium">benevolentnimblebat</span>
+          <div className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-gray-300 cursor-pointer">
+            <span className="text-base font-medium">benevolentnimblebat</span>
             <ChevronDown className="w-5 h-5" />
           </div>
         </div>
@@ -101,8 +101,8 @@ export default function Header() {
             </button>
             
             <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
-              <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-white"></div>
+              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
+                <div className="w-4 h-4 rounded-full bg-white"></div>
               </div>
             </button>
           </div>

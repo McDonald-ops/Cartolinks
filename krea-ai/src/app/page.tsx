@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-black">
       <Header />
       <main className="px-4 sm:px-6 lg:px-8">
         <FeaturedCarousel />
