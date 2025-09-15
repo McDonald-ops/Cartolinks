@@ -171,7 +171,7 @@ export default function FeaturedCarousel() {
           <div className="flex">
             {carouselData.map((slide) => (
               <div key={slide.id} className="flex-[0_0_100%] lg:flex-[0_0_50%] min-w-0 pl-2 sm:pl-4">
-                <div className={`rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-[500px]`}>
+                <div className={`rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative h-[350px]`}>
                   {slide.id === 1 ? (
                     // Special layout for WAN 2.2 - Full background with three side-by-side images
                     <>
@@ -203,7 +203,7 @@ export default function FeaturedCarousel() {
                       </div>
                       
                       {/* Overlay content */}
-                      <div className="absolute inset-0 flex flex-col justify-between p-6">
+                      <div className="absolute inset-0 flex flex-col justify-between p-4">
                         {/* Top - Left Label */}
                         <div className="flex justify-start">
                           <span className="text-xs font-semibold text-white">
@@ -213,24 +213,24 @@ export default function FeaturedCarousel() {
                         
                         {/* Center - Large Title */}
                         <div className="flex justify-center items-center">
-                          <h2 className="text-6xl font-black text-white drop-shadow-lg text-center">
+                          <h2 className="text-4xl font-black text-white drop-shadow-lg text-center">
                             WAN 2.2
                           </h2>
                         </div>
                         
                         {/* Bottom - Title, Description and Button */}
                         <div className="flex justify-between items-end">
-                          <div className="flex-1 pr-4">
-                            <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                          <div className="flex-1 pr-3">
+                            <h3 className="text-lg font-bold text-white mb-1 drop-shadow-lg">
                               {slide.title}
                             </h3>
-                            <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">
+                            <p className="text-white/90 text-xs leading-relaxed drop-shadow-md">
                               Generate complex images with the brand new and powerful<br/>
                               WAN 2.2 model. Exceptional prompt adherence and ultra-<br/>
                               realistic textures.
                             </p>
                           </div>
-                          <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex-shrink-0">
+                          <button className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors flex-shrink-0 text-sm">
                             {slide.buttonText}
                           </button>
                         </div>
@@ -272,7 +272,7 @@ export default function FeaturedCarousel() {
                       </div>
                       
                       {/* Overlay content */}
-                      <div className="absolute inset-0 flex flex-col justify-between p-6">
+                      <div className="absolute inset-0 flex flex-col justify-between p-4">
                         {/* Top - Left Label */}
                         <div className="flex justify-start">
                           <span className="text-xs font-semibold text-white">
@@ -282,24 +282,24 @@ export default function FeaturedCarousel() {
                         
                         {/* Center - Large Title */}
                         <div className="flex justify-center items-center">
-                          <h2 className="text-6xl font-black text-white text-center">
+                          <h2 className="text-4xl font-black text-white text-center">
                             Open Source
                           </h2>
                         </div>
                         
                         {/* Bottom - Title, Description and Button */}
                         <div className="flex justify-between items-end">
-                          <div className="flex-1 pr-4">
-                            <h3 className="text-2xl font-bold text-white mb-2">
+                          <div className="flex-1 pr-3">
+                            <h3 className="text-lg font-bold text-white mb-1">
                               {slide.title}
                             </h3>
-                            <p className="text-white text-sm leading-relaxed">
+                            <p className="text-white text-xs leading-relaxed">
                               We're making the weights to our FLUX.1 Krea model open-source.<br/>
                               Download and run our model weights, read the technical report, or<br/>
                               generate with it in Krea Image.
                             </p>
                           </div>
-                          <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex-shrink-0 border border-gray-300">
+                          <button className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors flex-shrink-0 border border-gray-300 text-sm">
                             {slide.buttonText}
                           </button>
                         </div>
@@ -308,13 +308,13 @@ export default function FeaturedCarousel() {
                   ) : (
                     // Default layout for slides 3-9 - Standard card with gradient background
                     <>
-                      <div className="h-full relative flex items-center justify-center p-8 bg-gray-50">
+                      <div className="h-full relative flex items-center justify-center p-6 bg-gray-50">
                         {/* Background placeholder */}
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
                       </div>
                       
                       {/* Overlay content */}
-                      <div className="absolute inset-0 flex flex-col justify-between p-6">
+                      <div className="absolute inset-0 flex flex-col justify-between p-4">
                         {/* Top - Left Label */}
                         <div className="flex justify-start">
                           <span className="text-xs font-semibold text-gray-600">
@@ -324,21 +324,21 @@ export default function FeaturedCarousel() {
                         
                         {/* Center - Large Title */}
                         <div className="flex justify-center items-center">
-                          <h2 className="text-6xl font-black text-gray-900 text-center">
+                          <h2 className="text-4xl font-black text-gray-900 text-center">
                             {slide.title.split(' ')[0]}
                           </h2>
                         </div>
                         
                         {/* Bottom - Title, Description and Button */}
                         <div className="flex justify-between items-end">
-                          <div className="flex-1 pr-4">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          <div className="flex-1 pr-3">
+                            <h3 className="text-lg font-bold text-gray-900 mb-1">
                               {slide.title}
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: slide.description }}>
+                            <p className="text-gray-600 text-xs leading-relaxed" dangerouslySetInnerHTML={{ __html: slide.description }}>
                             </p>
                           </div>
-                          <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors flex-shrink-0 border border-gray-300">
+                          <button className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors flex-shrink-0 border border-gray-300 text-sm">
                             {slide.buttonText}
                           </button>
                         </div>
@@ -352,15 +352,15 @@ export default function FeaturedCarousel() {
         </div>
 
         {/* Pagination Dots and Navigation Arrows */}
-        <div className="flex justify-between items-center mt-6">
+        <div className="flex justify-between items-center mt-4">
           {/* Pagination Dots - Centered below carousel */}
           <div className="flex justify-center flex-1">
-            <div className="flex space-x-2">
+            <div className="flex space-x-1.5">
               {carouselData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollTo(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
                     index === selectedIndex
                       ? "bg-black"
                       : "bg-gray-300 hover:bg-gray-400"
@@ -371,21 +371,21 @@ export default function FeaturedCarousel() {
           </div>
           
           {/* Navigation Arrows - Right side */}
-          <div className="flex space-x-2">
+          <div className="flex space-x-1.5">
             {/* Previous slide button */}
             <button
               onClick={scrollPrev}
-              className="bg-white border border-gray-200 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white border border-gray-200 rounded-full p-1.5 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
+              <ChevronLeft className="w-4 h-4 text-gray-600" />
             </button>
             
             {/* Next slide button */}
             <button
               onClick={scrollNext}
-              className="bg-white border border-gray-200 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white border border-gray-200 rounded-full p-1.5 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
+              <ChevronRight className="w-4 h-4 text-gray-600" />
             </button>
           </div>
         </div>
