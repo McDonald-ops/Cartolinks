@@ -22,7 +22,12 @@ export default function Header() {
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    // Add theme switching logic here
+    // Toggle dark mode on document
+    if (isDarkMode) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
   };
 
   return (
@@ -41,32 +46,32 @@ export default function Header() {
           
           <div className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 cursor-pointer">
             <span className="text-sm font-medium">benevolentnimblebat</span>
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-5 h-5" />
           </div>
         </div>
 
         {/* Center - Navigation Icons */}
         <div className="hidden lg:flex items-center bg-gray-100 rounded-lg p-1">
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <Home className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <Home className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <ImageIcon className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <ImageIcon className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <Video className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <Video className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <ArrowUpRight className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <ArrowUpRight className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <Zap className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <Zap className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <Type className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <Type className="w-6 h-6" />
           </button>
-          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors">
-            <Folder className="w-5 h-5" />
+          <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-white rounded-md transition-colors cursor-pointer">
+            <Folder className="w-6 h-6" />
           </button>
         </div>
 
@@ -74,25 +79,25 @@ export default function Header() {
         <div className="flex items-center space-x-2 sm:space-x-4">
           <nav className="hidden md:flex items-center space-x-3">
             <a href="#" className="flex items-center space-x-1.5 bg-gray-100 hover:bg-gray-200 px-2.5 py-1.5 rounded-lg transition-colors">
-              <ImageIcon className="w-3.5 h-3.5 text-gray-600" />
+              <ImageIcon className="w-4 h-4 text-gray-600" />
               <span className="text-sm text-gray-600 hover:text-gray-900 font-medium">Gallery</span>
             </a>
             <a href="#" className="flex items-center space-x-1.5 bg-gray-100 hover:bg-gray-200 px-2.5 py-1.5 rounded-lg transition-colors">
-              <HelpCircle className="w-3.5 h-3.5 text-gray-600" />
+              <HelpCircle className="w-4 h-4 text-gray-600" />
               <span className="text-sm text-gray-600 hover:text-gray-900 font-medium">Support</span>
             </a>
           </nav>
           
           <div className="flex items-center space-x-1.5">
-            <button className="p-1.5 text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
-              <Bell className="w-4 h-4" />
+            <button className="p-1.5 text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors cursor-pointer">
+              <Bell className="w-5 h-5" />
             </button>
             
             <button 
               onClick={toggleTheme}
-              className="p-1.5 text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              className="p-1.5 text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors cursor-pointer"
             >
-              {isDarkMode ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+              {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             
             <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
