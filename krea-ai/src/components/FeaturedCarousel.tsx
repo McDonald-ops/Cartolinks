@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 /**
@@ -294,7 +293,7 @@ export default function FeaturedCarousel() {
                               {slide.title}
                             </h3>
                             <p className="text-white text-xs leading-relaxed">
-                              We're making the weights to our FLUX.1 Krea model open-source.<br/>
+                              We&apos;re making the weights to our FLUX.1 Krea model open-source.<br/>
                               Download and run our model weights, read the technical report, or<br/>
                               generate with it in Krea Image.
                             </p>

@@ -12,7 +12,6 @@ import {
   Bell, 
   Sun, 
   Moon, 
-  Grid3X3,
   HelpCircle,
   ChevronDown
 } from "lucide-react";
