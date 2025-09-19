@@ -138,7 +138,7 @@ export default function GenerateTools() {
                   className={`p-1.5 rounded-sm flex-shrink-0`}
                   style={{ backgroundColor: tool.bgColor }}
                 >
-                  <IconComponent className={`w-6 h-6 ${tool.color}`} />
+                  <IconComponent className={`w-8 h-8 ${tool.color}`} />
                 </div>
 
                 {/* Tool information */}
